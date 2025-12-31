@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 
 const skills = [
     {
-        category: "Core Engine (Backend)",
-        items: ["Node.js", "Go", "PostgreSQL", "Redis", "Docker", "AWS"],
+        category: "",
+        items: ["Python", "Java", "Node.js", "PostgreSlQL", "MySQL", "MongoDB", "Docker"],
     },
     {
-        category: "Aerodynamics (Frontend)",
-        items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js"],
+        category: "  ",
+        items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Bootstrap CSS", "Express.js", "JavaScript"],
     },
     {
-        category: "Telemetry (Tools)",
-        items: ["Git", "CI/CD", "Jest", "Figma", "Linux", "Vercel"],
+        category: "   ",
+        items: ["Git", "GitHub Actions", "Postman", "Docker", "Kubernetes", "GCP"],
     },
 ];
 
@@ -24,7 +24,7 @@ export default function Skills() {
                 <div className="mb-16">
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">SPECIFICATIONS</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
-                        Technical <span className="text-gray-600">Arsenal</span>
+                        Technical <span className="text-gray-600">Skills</span>
                     </h2>
                 </div>
 
@@ -38,10 +38,10 @@ export default function Skills() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="p-8 border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors rounded-sm group"
                         >
-                            <h3 className="text-xl font-bold text-white mb-6 font-heading flex items-center gap-2">
+                            {/* <h3 className="text-xl font-bold text-white mb-6 font-heading flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 bg-ferrari-red rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                                 {skillGroup.category}
-                            </h3>
+                            </h3> */}
                             <ul className="space-y-4">
                                 {skillGroup.items.map((item) => (
                                     <li key={item} className="text-gray-400 font-mono text-sm border-b border-white/5 pb-2 last:border-0 flex justify-between items-center">

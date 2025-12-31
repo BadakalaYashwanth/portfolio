@@ -43,7 +43,7 @@ export default function Projects() {
                         </h2>
                     </div>
                     <p className="text-gray-400 max-w-sm mt-6 md:mt-0 font-light">
-                        Each project is approached with the precision of a Formula 1 engineer. Performance, aesthetics, and utility combined.
+                        Each project is approached with a full-stack engineering mindset, where performance, scalability, modern UI, and real-world usability are treated as non-negotiable.
                     </p>
                 </div>
 
