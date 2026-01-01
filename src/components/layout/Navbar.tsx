@@ -9,8 +9,11 @@ import clsx from "clsx";
 const navLinks = [
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Process", href: "#process" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Certifications", href: "#certifications" }
 ];
 
 export default function Navbar() {

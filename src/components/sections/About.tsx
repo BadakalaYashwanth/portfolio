@@ -16,10 +16,9 @@ export default function About() {
 
                         <div className="space-y-6 text-gray-400 font-light text-lg leading-relaxed">
                             <p>
-                                I am <span className="font-bold text-white">Badakala Yaswanth</span>.
-                                I Pursued my B.Tech in Computer Science Engineering from <span className="font-bold text-white">Andhra University</span> in June 2025.
+                                I am <span className="font-bold text-white"><span className="lg:text-2xl">B</span>adakala <span className="lg:text-2xl">Y</span>aswanth</span>.
+                                I earned my B.Tech in Computer Science Engineering from <span className="font-bold text-white"><span className="lg:text-2xl">A</span>ndhra <span className="lg:text-2xl">U</span>niversity</span> in June 2025.
                                 My approach to software transcends the academic.
-
                             </p>
                             <p>
                                 I am a product-driven engineer who believes that code is merely a tool to solve human problems. I specialize in building scalable, resilient applications that balance raw computational power with refined user experiences. For me, every project is an opportunity to push the boundaries of what's possible.
