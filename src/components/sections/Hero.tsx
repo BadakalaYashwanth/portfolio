@@ -75,7 +75,7 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
             >
-                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
+                <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent mx-auto" />
             </motion.div>
         </section>
     );

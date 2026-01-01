@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Experience() {
     return (
@@ -64,9 +65,14 @@ export default function Experience() {
                                 <Link
                                     href="https://startling-piroshki-342345.netlify.app/"
                                     target="_blank"
-                                    className="group relative block aspect-video overflow-hidden border rounded-xl border-white/10 opacity-100"
+                                    className="group relative block aspect-video overflow-hidden border border-white/10 rounded-xl bg-neutral-900 transition-all duration-300 hover:border-ferrari-red/50 hover:brightness-110"
                                 >
-                                    <div className="absolute inset-0 bg-[url('/projects/stocksage.png')] bg-cover bg-top transition-transform duration-700 group-hover:scale-105" />
+                                    <Image
+                                        src="/projects/stocksage.png"
+                                        alt="StockSage Project Screenshot"
+                                        fill
+                                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                    />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center flex-col gap-2 p-4 text-center">
                                         <h5 className="text-xl font-bold text-white">StockSage</h5>
                                         <p className="text-gray-300 text-xs font-light">AI-Powered Stock Market Predictions</p>
@@ -82,9 +88,14 @@ export default function Experience() {
                                 <Link
                                     href="https://github.com/BadakalaYashwanth/DataSphere-"
                                     target="_blank"
-                                    className="group relative block aspect-video overflow-hidden border rounded-xl border-white/10 opacity-100"
+                                    className="group relative block aspect-video overflow-hidden border border-white/10 rounded-xl bg-neutral-900 transition-all duration-300 hover:border-ferrari-red/50 hover:brightness-110"
                                 >
-                                    <div className="absolute inset-0 bg-[url('/projects/datasphere.png')] bg-cover bg-top transition-transform duration-700 group-hover:scale-105" />
+                                    <Image
+                                        src="/projects/datasphere.png"
+                                        alt="DataSphere Project Screenshot"
+                                        fill
+                                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                    />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center flex-col gap-2 p-4 text-center">
                                         <h5 className="text-xl font-bold text-white">DataSphere</h5>
                                         <p className="text-gray-300 text-xs font-light">High-Performance Business Dashboards</p>
