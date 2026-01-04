@@ -13,6 +13,7 @@ import CallToAction from "@/components/sections/CallToAction";
 export default function Home() {
   return (
     <main className="min-h-screen bg-ferrari-black text-white selection:bg-ferrari-red selection:text-white">
+      {/* Main Navigation */}
       <Navbar />
       <Hero />
       <About />
