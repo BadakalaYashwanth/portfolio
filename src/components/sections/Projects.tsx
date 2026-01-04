@@ -2,11 +2,23 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 
 const projects = [
     {
         id: "01",
+        title: "NeoWallet",
+        category: "Full Stack Financial Platform",
+        description: "Developed a full-stack digital wallet enabling seamless transactions, AI-driven financial insights, automated expense categorization, and personalized budgeting. Designed an intuitive UI for accessibility while ensuring secure payments and real-time data processing.",
+        tech: ["HTML", "CSS", "TypeScript", "Node.js", "Express.js", "OpenAPI", "Bootstrap CSS", "REST API", "Python", "Wallet Architecture", "Postman", "Git", "GitHub Actions", "MongoDB"],
+        color: "from-emerald-900 to-black",
+        links: {
+            demo: "https://walletpa.netlify.app/",
+            repo: "https://github.com/BadakalaYashwanth/NeoWallet"
+        }
+    },
+    {
+        id: "02",
         title: "Vortex Finance",
         category: "Fintech Platform",
         description: "A high-frequency trading dashboard with real-time WebSocket data visualization.",
@@ -14,7 +26,7 @@ const projects = [
         color: "from-blue-900 to-black",
     },
     {
-        id: "02",
+        id: "03",
         title: "Aura Systems",
         category: "SaaS Dashboard",
         description: "AI-driven analytics platform for enterprise resource planning.",
@@ -22,7 +34,7 @@ const projects = [
         color: "from-purple-900 to-black",
     },
     {
-        id: "03",
+        id: "04",
         title: "Nexus Core",
         category: "Design System",
         description: "A comprehensive component library built for speed and accessibility.",
@@ -37,13 +49,13 @@ export default function Projects() {
             <div className="container px-6 mx-auto">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-24">
                     <div>
-                        <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">THE FLEET</span>
+                        <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">Each project is a</span>
                         <h2 className="font-heading text-4xl md:text-6xl font-bold text-white uppercase">
-                            Selected <span className="text-gray-600">Works</span>
+                            Proof of <span className="text-gray-600">Works</span>
                         </h2>
                     </div>
                     <p className="text-gray-400 max-w-sm mt-6 md:mt-0 font-light">
-                        Each project is approached with a full-stack engineering mindset, where performance, scalability, modern UI, and real-world usability are treated as non-negotiable.
+                        Each project is approached with a full-stack engineering mindset, where performance, scalability, modern UI, machine learning integration, and real-world usability are treated as non-negotiable.
                     </p>
                 </div>
 
@@ -88,10 +100,31 @@ export default function Projects() {
                                     ))}
                                 </div>
 
-                                <Link href="#" className="flex items-center gap-2 text-white font-bold group/link w-max">
-                                    VIEW CASE STUDY
-                                    <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                                </Link>
+                                <div className="flex gap-4 mt-8">
+                                    {(project as any).links ? (
+                                        <>
+                                            <Link
+                                                href={(project as any).links.demo}
+                                                target="_blank"
+                                                className="px-6 py-2.5 text-sm font-bold bg-ferrari-red text-white rounded-sm hover:bg-red-600 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,40,0,0.2)] hover:shadow-[0_0_30px_rgba(255,40,0,0.4)]"
+                                            >
+                                                View Project <ExternalLink className="w-4 h-4" />
+                                            </Link>
+                                            <Link
+                                                href={(project as any).links.repo}
+                                                target="_blank"
+                                                className="px-6 py-2.5 text-sm font-bold border border-white/20 text-white rounded-sm hover:border-white hover:bg-white/10 transition-all flex items-center gap-2"
+                                            >
+                                                View Code <Github className="w-4 h-4" />
+                                            </Link>
+                                        </>
+                                    ) : (
+                                        <Link href="#" className="flex items-center gap-2 text-white font-bold group/link w-max">
+                                            VIEW CASE STUDY
+                                            <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                                        </Link>
+                                    )}
+                                </div>
                             </div>
                         </motion.div>
                     ))}
