@@ -53,7 +53,7 @@ export default function Projects() {
                     <div>
                         <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">Each project is a</span>
                         <h2 className="font-heading text-4xl md:text-6xl font-bold text-white uppercase">
-                            Proof of <span className="text-gray-600">Works</span>
+                            Proof of <span className="text-gray-600">Work</span>
                         </h2>
                     </div>
                     <p className="text-gray-400 max-w-sm mt-6 md:mt-0 font-light">
@@ -74,16 +74,28 @@ export default function Projects() {
                             {/* Project Visual */}
                             <div className={`md:col-span-7 relative aspect-[16/9] bg-gradient-to-br ${project.color} rounded-sm overflow-hidden border border-white/10 group-hover:border-ferrari-red/50 transition-colors duration-500`}>
                                 {(project as any).image ? (
-                                    <div className="absolute inset-0 p-4 flex items-center justify-center">
-                                        <div className="relative w-full h-full shadow-2xl overflow-hidden rounded-sm bg-ferrari-black/50">
-                                            <Image
-                                                src={(project as any).image}
-                                                alt={`${project.title} Preview`}
-                                                fill
-                                                className="object-contain"
-                                            />
+                                    <>
+                                        <div className="absolute inset-0 p-4 flex items-center justify-center">
+                                            <div className="relative w-full h-full shadow-2xl overflow-hidden rounded-sm bg-ferrari-black/50">
+                                                <Image
+                                                    src={(project as any).image}
+                                                    alt={`${project.title} Preview`}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
+                                        {/* Hover Overlay */}
+                                        {(project as any).links?.demo && (
+                                            <Link
+                                                href={(project as any).links.demo}
+                                                target="_blank"
+                                                className="absolute bottom-0 left-0 right-0 py-2 bg-black/99 backdrop-blur-md border-t border-white/10 flex items-center justify-center gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20 text-white font-mono text-sm uppercase tracking-widest hover:text-ferrari-red"
+                                            >
+                                                View Live Project <ArrowUpRight className="w-3 h-3" />
+                                            </Link>
+                                        )}
+                                    </>
                                 ) : (
                                     <div className="absolute inset-0 flex items-center justify-center">
                                         {/* Placeholder for actual screenshot */}
