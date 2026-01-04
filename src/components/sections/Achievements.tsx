@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award, Chrome, ExternalLink, Trophy, Zap } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Achievements() {
     return (
@@ -61,18 +62,32 @@ export default function Achievements() {
 
                     {/* Secondary Achievements List */}
                     <div className="lg:col-span-1 flex flex-col justify-between gap-6">
-                        <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors">
-                            <Award className="w-8 h-8 text-ferrari-red mb-6" />
-                            <h4 className="text-xl font-bold text-white mb-2">Google QuickDraw & YOLO</h4>
+                        <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group">
+                            <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0 mb-6">
+                                <Image
+                                    src="/achievements/quickdraw.png"
+                                    alt="Google QuickDraw Logo"
+                                    fill
+                                    className="object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity"
+                                />
+                            </div>
+                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-ferrari-red transition-colors">Google QuickDraw & YOLO</h4>
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-4">
                                 Contributor to algorithm improvements, enhancing detection accuracy and dataset processing efficiency.
                             </p>
                             <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Open Source Contribution</span>
                         </div>
 
-                        <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors">
-                            <Trophy className="w-8 h-8 text-yellow-500 mb-6" />
-                            <h4 className="text-xl font-bold text-white mb-2">Google Cloud Arcade 2025</h4>
+                        <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group">
+                            <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0 mb-6">
+                                <Image
+                                    src="/achievements/cloud-arcade.png"
+                                    alt="Google Cloud Arcade Logo"
+                                    fill
+                                    className="object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity"
+                                />
+                            </div>
+                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-ferrari-red transition-colors">Google Cloud Arcade 2025</h4>
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-4">
                                 Winner of the cloud architecture and deployment challenge, demonstrating mastery in GCP services.
                             </p>
