@@ -41,11 +41,11 @@ export default function About() {
 
                             <div className="grid grid-cols-2 gap-8">
                                 <div>
-                                    <span className="block text-4xl font-bold text-white font-heading">5+</span>
+                                    <span className="block text-4xl font-bold text-white font-heading">0.6</span>
                                     <span className="text-sm text-gray-500 uppercase tracking-wider">Years Exp</span>
                                 </div>
                                 <div>
-                                    <span className="block text-4xl font-bold text-white font-heading">50+</span>
+                                    <span className="block text-4xl font-bold text-white font-heading">30+</span>
                                     <span className="text-sm text-gray-500 uppercase tracking-wider">Projects</span>
                                 </div>
                                 <div>
