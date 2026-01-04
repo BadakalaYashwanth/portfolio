@@ -6,15 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 
-// Navigation links configuration
-const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#skills" },
-    { name: "Process", href: "#process" },
-    { name: "Achievements", href: "#achievements" },
-    { name: "Certifications", href: "#certifications" }
+const navItems = [
+    "About",
+    "Projects",
+    "Experience",
+    "Skills",
+    "Process",
+    "Achievements",
+    "Certifications"
 ];
 
 export default function Navbar() {
@@ -52,13 +51,13 @@ export default function Navbar() {
 
                     {/* Desktop Links */}
                     <div className="hidden md:flex items-center space-x-8">
-                        {navLinks.map((link) => (
+                        {navItems.map((item) => (
                             <Link
-                                key={link.name}
-                                href={link.href}
+                                key={item}
+                                href={`#${item.toLowerCase()}`}
                                 className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
                             >
-                                {link.name}
+                                {item}
                                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ferrari-red transition-all duration-300 group-hover:w-full" />
                             </Link>
                         ))}
@@ -94,14 +93,14 @@ export default function Navbar() {
                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                         className="fixed inset-0 z-40 bg-ferrari-black flex flex-col items-center justify-center space-y-8 md:hidden"
                     >
-                        {navLinks.map((link) => (
+                        {navItems.map((item) => (
                             <Link
-                                key={link.name}
-                                href={link.href}
+                                key={item}
+                                href={`#${item.toLowerCase()}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="text-3xl font-heading font-bold text-white hover:text-ferrari-red transition-colors"
                             >
-                                {link.name}
+                                {item}
                             </Link>
                         ))}
                         <Link
