@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 
 const projects = [
@@ -12,6 +13,7 @@ const projects = [
         description: "Developed a full-stack digital wallet enabling seamless transactions, AI-driven financial insights, automated expense categorization, and personalized budgeting. Designed an intuitive UI for accessibility while ensuring secure payments and real-time data processing.",
         tech: ["HTML", "CSS", "TypeScript", "Node.js", "Express.js", "OpenAPI", "Bootstrap CSS", "REST API", "Python", "Wallet Architecture", "Postman", "Git", "GitHub Actions", "MongoDB"],
         color: "from-emerald-900 to-black",
+        image: "/projects/neowallet.png",
         links: {
             demo: "https://walletpa.netlify.app/",
             repo: "https://github.com/BadakalaYashwanth/NeoWallet"
@@ -71,12 +73,25 @@ export default function Projects() {
                         >
                             {/* Project Visual */}
                             <div className={`md:col-span-7 relative aspect-[16/9] bg-gradient-to-br ${project.color} rounded-sm overflow-hidden border border-white/10 group-hover:border-ferrari-red/50 transition-colors duration-500`}>
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    {/* Placeholder for actual screenshot */}
-                                    <span className="font-heading text-9xl font-bold text-white/5 group-hover:text-white/10 transition-colors">
-                                        {project.id}
-                                    </span>
-                                </div>
+                                {(project as any).image ? (
+                                    <div className="absolute inset-0 p-4 flex items-center justify-center">
+                                        <div className="relative w-full h-full shadow-2xl overflow-hidden rounded-sm bg-ferrari-black/50">
+                                            <Image
+                                                src={(project as any).image}
+                                                alt={`${project.title} Preview`}
+                                                fill
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        {/* Placeholder for actual screenshot */}
+                                        <span className="font-heading text-9xl font-bold text-white/5 group-hover:text-white/10 transition-colors">
+                                            {project.id}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Project Info */}
