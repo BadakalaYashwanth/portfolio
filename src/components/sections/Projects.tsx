@@ -21,6 +21,19 @@ const projects = [
     },
     {
         id: "02",
+        title: "Meta Extensions",
+        category: "Modern NFT Marketplace",
+        description: "Meta Extensions is a modern NFT marketplace designed to showcase and sell digital artwork. It offers a clean, responsive UI for browsing collections, viewing asset details, and managing ownership, giving creators a simple way to list NFTs and buyers a smooth, straightforward experience.",
+        tech: ["HTML", "CSS", "JavaScript", "TypeScript", "Node.js", "Express.js", "OpenAPI", "Bootstrap CSS", "REST API", "Python", "Wallet Architecture", "Postman", "Git", "GitHub Actions"],
+        color: "from-orange-900 to-black",
+        image: "/projects/meta-extensions.png",
+        links: {
+            demo: "https://meteexa.netlify.app/",
+            repo: "https://github.com/BadakalaYashwanth/Meta-Extensions?tab=readme-ov-file"
+        }
+    },
+    {
+        id: "03",
         title: "Vortex Finance",
         category: "Fintech Platform",
         description: "A high-frequency trading dashboard with real-time WebSocket data visualization.",
@@ -28,7 +41,7 @@ const projects = [
         color: "from-blue-900 to-black",
     },
     {
-        id: "03",
+        id: "04",
         title: "Aura Systems",
         category: "SaaS Dashboard",
         description: "AI-driven analytics platform for enterprise resource planning.",
@@ -36,7 +49,7 @@ const projects = [
         color: "from-purple-900 to-black",
     },
     {
-        id: "04",
+        id: "05",
         title: "Nexus Core",
         category: "Design System",
         description: "A comprehensive component library built for speed and accessibility.",
