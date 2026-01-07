@@ -34,6 +34,19 @@ const projects = [
     },
     {
         id: "03",
+        title: "DriveFusion",
+        category: "Autonomous Driving Simulation",
+        description: "DriveFusion is a JavaScript-based autonomous driving simulation that uses neural networks to train AI-controlled vehicles inside a dynamically generated environment. The system features procedural road, building, and tree generation, 2D canvas rendering, an interactive minimap, and the ability to save and load neural network states for continuous learning.",
+        tech: ["JavaScript", "HTML", "CSS", "React.js", "Node.js", "Bootstrap CSS", "Git", "Machine Learning", "Reinforcement Learning"],
+        color: "from-green-900 to-black",
+        image: "/projects/drivefusion.png",
+        links: {
+            demo: "https://667e8a87e6cd0309c3647fb5--shimmering-kashata-6053eb.netlify.app/",
+            repo: "https://github.com/BadakalaYashwanth/DriveFusion"
+        }
+    },
+    {
+        id: "04",
         title: "Vortex Finance",
         category: "Fintech Platform",
         description: "A high-frequency trading dashboard with real-time WebSocket data visualization.",
@@ -41,7 +54,7 @@ const projects = [
         color: "from-blue-900 to-black",
     },
     {
-        id: "04",
+        id: "05",
         title: "Aura Systems",
         category: "SaaS Dashboard",
         description: "AI-driven analytics platform for enterprise resource planning.",
@@ -49,12 +62,12 @@ const projects = [
         color: "from-purple-900 to-black",
     },
     {
-        id: "05",
+        id: "06",
         title: "Nexus Core",
-        category: "Design System",
-        description: "A comprehensive component library built for speed and accessibility.",
-        tech: ["Storybook", "React", "Radix UI"],
-        color: "from-emerald-900 to-black",
+        category: "AI-Powered CRM",
+        description: "Next-gen CRM with predictive analytics and automated workflows.",
+        tech: ["Next.js", "TypeScript", "GraphQL", "PostgreSQL"],
+        color: "from-red-900 to-black",
     },
 ];
 
