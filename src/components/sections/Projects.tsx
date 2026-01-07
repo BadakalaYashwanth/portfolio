@@ -45,30 +45,6 @@ const projects = [
             repo: "https://github.com/BadakalaYashwanth/DriveFusion"
         }
     },
-    {
-        id: "04",
-        title: "Vortex Finance",
-        category: "Fintech Platform",
-        description: "A high-frequency trading dashboard with real-time WebSocket data visualization.",
-        tech: ["Next.js", "TypeScript", "D3.js", "Supabase"],
-        color: "from-blue-900 to-black",
-    },
-    {
-        id: "05",
-        title: "Aura Systems",
-        category: "SaaS Dashboard",
-        description: "AI-driven analytics platform for enterprise resource planning.",
-        tech: ["React", "Tailwind", "Python"],
-        color: "from-purple-900 to-black",
-    },
-    {
-        id: "06",
-        title: "Nexus Core",
-        category: "AI-Powered CRM",
-        description: "Next-gen CRM with predictive analytics and automated workflows.",
-        tech: ["Next.js", "TypeScript", "GraphQL", "PostgreSQL"],
-        color: "from-red-900 to-black",
-    },
 ];
 
 export default function Projects() {
