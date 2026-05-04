@@ -1,9 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Award, Chrome, ExternalLink, Trophy, Zap } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { Trophy, ExternalLink, Chrome, Zap } from "lucide-react";
 
 export default function Achievements() {
     return (
@@ -24,9 +19,10 @@ export default function Achievements() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Primary Featured Achievement */}
                     <div className="lg:col-span-2">
-                        <Link
+                        <a
                             href="https://github.com/BadakalaYashwanth/AdEclipse-chrome-extensions"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="group relative block h-full min-h-[400px] bg-gradient-to-br from-zinc-900 to-black border border-white/10 rounded-sm overflow-hidden hover:border-ferrari-red/50 transition-all duration-500"
                         >
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay" />
@@ -57,7 +53,7 @@ export default function Achievements() {
                                     </span>
                                 </div>
                             </div>
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Secondary Achievements List */}
@@ -65,19 +61,17 @@ export default function Achievements() {
                         <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0">
-                                    <Image
+                                    <img
                                         src="/achievements/quickdraw.png"
                                         alt="QuickDraw Logo"
-                                        fill
-                                        className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                        className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                                     />
                                 </div>
                                 <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0">
-                                    <Image
+                                    <img
                                         src="/achievements/yolo.png"
                                         alt="YOLO Logo"
-                                        fill
-                                        className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                        className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
                                     />
                                 </div>
                             </div>
@@ -90,11 +84,10 @@ export default function Achievements() {
 
                         <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group">
                             <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0 mb-6">
-                                <Image
+                                <img
                                     src="/achievements/cloud-arcade.png"
                                     alt="Google Cloud Arcade Logo"
-                                    fill
-                                    className="object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity"
+                                    className="w-full h-full object-contain p-1 opacity-90 group-hover:opacity-100 transition-opacity"
                                 />
                             </div>
                             <h4 className="text-xl font-bold text-white mb-2 group-hover:text-ferrari-red transition-colors">Google Cloud Arcade 2025</h4>

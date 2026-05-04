@@ -1,7 +1,4 @@
-"use client";
-
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -52,19 +49,19 @@ export default function Hero() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                    <Link
+                    <a
                         href="#projects"
                         className="group px-8 py-4 bg-ferrari-red text-white font-bold tracking-wide rounded-sm hover:bg-red-600 transition-all flex items-center gap-2"
                     >
                         VIEW PROJECTS
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         href="#contact"
                         className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold tracking-wide rounded-sm hover:bg-white/5 hover:border-white transition-all"
                     >
                         HIRE ME
-                    </Link>
+                    </a>
                 </motion.div>
             </div>
 

@@ -1,7 +1,4 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
@@ -43,34 +40,34 @@ export default function Navbar() {
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="group">
+                    <a href="/" className="group">
                         <span className="font-heading font-bold text-2xl tracking-tighter text-white group-hover:text-ferrari-red transition-colors">
                             DEV<span className="text-ferrari-red">.</span>
                         </span>
-                    </Link>
+                    </a>
 
                     {/* Desktop Links */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
-                            <Link
+                            <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
                                 className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
                             >
                                 {item}
                                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-ferrari-red transition-all duration-300 group-hover:w-full" />
-                            </Link>
+                            </a>
                         ))}
                     </div>
 
                     {/* CTA Button */}
                     <div className="hidden md:block">
-                        <Link
+                        <a
                             href="#contact"
                             className="px-5 py-2 text-sm font-bold border border-white/20 hover:border-ferrari-red hover:bg-ferrari-red hover:text-white transition-all duration-300 rounded-sm"
                         >
                             HIRE ME
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Mobile Toggle */}
@@ -94,22 +91,22 @@ export default function Navbar() {
                         className="fixed inset-0 z-40 bg-ferrari-black flex flex-col items-center justify-center space-y-8 md:hidden"
                     >
                         {navItems.map((item) => (
-                            <Link
+                            <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="text-3xl font-heading font-bold text-white hover:text-ferrari-red transition-colors"
                             >
                                 {item}
-                            </Link>
+                            </a>
                         ))}
-                        <Link
+                        <a
                             href="#contact"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="px-8 py-3 text-lg font-bold bg-ferrari-red text-white rounded-sm"
                         >
                             HIRE ME
-                        </Link>
+                        </a>
                     </motion.div>
                 )}
             </AnimatePresence>

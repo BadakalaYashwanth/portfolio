@@ -1,8 +1,5 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { BadgeCheck } from "lucide-react";
-import Image from "next/image";
 
 const certifications = [
     {
@@ -60,11 +57,10 @@ export default function Certifications() {
                         >
                             {/* Logo Container */}
                             <div className="relative w-16 h-16 flex-shrink-0 bg-white p-2 rounded-lg overflow-hidden flex items-center justify-center group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-shadow duration-300">
-                                <Image
+                                <img
                                     src={cert.logo}
                                     alt={`${cert.issuer} logo`}
-                                    fill
-                                    className="object-contain p-1"
+                                    className="w-full h-full object-contain p-1"
                                 />
                             </div>
 

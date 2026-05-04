@@ -1,26 +1,80 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { Github, ExternalLink } from "lucide-react";
 
 export default function Experience() {
     return (
         <section id="experience" className="py-32 bg-ferrari-black border-t border-white/5">
             <div className="container px-6 mx-auto max-w-5xl">
                 {/* Section Header */}
-                <div className="mb-20">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-20"
+                >
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">THE JOURNEY</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">
                         Internship <span className="text-gray-600">Experience</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="space-y-20">
-                    {/* Entry 1: Feynn Labs */}
-                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
+                    {/* Entry 1: UVNetware */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="relative border-l border-white/10 pl-8 md:pl-12 py-2"
+                    >
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-ferrari-red shadow-[0_0_10px_rgba(255,40,0,0.5)]" />
+
+                        <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
+                            <h3 className="text-2xl md:text-3xl font-bold text-white font-heading">Software Developer Intern</h3>
+                            <div className="flex items-center gap-3 mt-2 md:mt-0">
+                                <span className="text-white font-medium">UVNetware </span>
+                                <span className="text-gray-600">•</span>
+                                <span className="font-mono text-gray-500 text-sm">March 2026 - May 2026</span>
+                            </div>
+                        </div>
+
+                        <div className="space-y-8">
+                            <div className="space-y-4">
+                                <h4 className="text-sm font-mono text-gray-500 uppercase tracking-widest">Key Contributions</h4>
+                                <ul className="space-y-4 text-gray-300 font-light">
+                                    <li className="flex gap-3 items-start">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <span className="leading-relaxed">
+                                            Built secure JWT-based authentication system with bcrypt password hashing, MongoDB user schema, CORS-protected Express backend, and localStorage token management, delivering zero-vulnerability password storage and seamless login/logout across production deployment.
+                                        </span>
+                                    </li>
+                                    <li className="flex gap-3 items-start">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <span className="leading-relaxed">
+                                            Implemented multi-layer validation using Joi middleware (backend) and regex patterns (frontend) with real-time error feedback, domain-restricted email whitelist, and password strength requirements, preventing invalid data submission and improving user experience with specific error guidance.
+                                        </span>
+                                    </li>
+                                    <li className="flex gap-3 items-start">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <span className="leading-relaxed">
+                                            Developed JWT-authenticated product dashboard with PrivateRoute guards, secure API calls using Authorization headers, automatic token refresh on page load, and graceful 401/403 error handling, ensuring only authorized users access protected endpoints with zero security vulnerabilities.
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Entry 2: Feynn Labs */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="relative border-l border-white/10 pl-8 md:pl-12 py-2"
+                    >
+                        <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-gray-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
                             <h3 className="text-2xl md:text-3xl font-bold text-white font-heading">Software Engineering Intern</h3>
@@ -62,16 +116,16 @@ export default function Experience() {
 
                             {/* Featured Projects within Experience */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                                <Link
+                                <a
                                     href="https://startling-piroshki-342345.netlify.app/"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="group relative block aspect-video overflow-hidden border border-white/10 rounded-xl bg-neutral-900 transition-all duration-300 hover:border-ferrari-red/50 hover:brightness-110"
                                 >
-                                    <Image
+                                    <img
                                         src="/projects/stocksage.png"
                                         alt="StockSage Project Screenshot"
-                                        fill
-                                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center flex-col gap-2 p-4 text-center">
                                         <h5 className="text-xl font-bold text-white">StockSage</h5>
@@ -83,18 +137,18 @@ export default function Experience() {
                                     <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent group-hover:opacity-0 transition-opacity">
                                         <h5 className="text-sm font-bold text-white">StockSage</h5>
                                     </div>
-                                </Link>
+                                </a>
 
-                                <Link
+                                <a
                                     href="https://github.com/BadakalaYashwanth/DataSphere-"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="group relative block aspect-video overflow-hidden border border-white/10 rounded-xl bg-neutral-900 transition-all duration-300 hover:border-ferrari-red/50 hover:brightness-110"
                                 >
-                                    <Image
+                                    <img
                                         src="/projects/datasphere.png"
                                         alt="DataSphere Project Screenshot"
-                                        fill
-                                        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center flex-col gap-2 p-4 text-center">
                                         <h5 className="text-xl font-bold text-white">DataSphere</h5>
@@ -106,13 +160,19 @@ export default function Experience() {
                                     <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent group-hover:opacity-0 transition-opacity">
                                         <h5 className="text-sm font-bold text-white">DataSphere</h5>
                                     </div>
-                                </Link>
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Entry 2: Open Source */}
-                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
+                    {/* Entry 3: Open Source */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                        className="relative border-l border-white/10 pl-8 md:pl-12 py-2"
+                    >
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-gray-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -147,7 +207,7 @@ export default function Experience() {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

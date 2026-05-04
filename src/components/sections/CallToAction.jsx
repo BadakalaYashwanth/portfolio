@@ -1,8 +1,5 @@
-"use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { Mail, Github, Linkedin, Instagram, Check } from "lucide-react";
 import clsx from "clsx";
 
@@ -44,7 +41,7 @@ const socialLinks = [
 export default function CallToAction() {
     const [copied, setCopied] = useState(false);
 
-    const handleCopy = async (text: string) => {
+    const handleCopy = async (text) => {
         try {
             await navigator.clipboard.writeText(text);
             setCopied(true);
@@ -78,7 +75,7 @@ export default function CallToAction() {
                                 return (
                                     <button
                                         key={link.id}
-                                        onClick={() => handleCopy(link.value!)}
+                                        onClick={() => handleCopy(link.value)}
                                         className="group relative focus:outline-none"
                                         aria-label={link.label}
                                     >
@@ -115,9 +112,9 @@ export default function CallToAction() {
                             }
 
                             return (
-                                <Link
+                                <a
                                     key={link.id}
-                                    href={link.href!}
+                                    href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="group relative focus:outline-none"
@@ -135,7 +132,7 @@ export default function CallToAction() {
                                     <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-sm text-gray-500 whitespace-nowrap font-mono pointer-events-none">
                                         {link.label}
                                     </span>
-                                </Link>
+                                </a>
                             );
                         })}
                     </div>
