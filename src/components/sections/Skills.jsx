@@ -11,7 +11,7 @@ const skills = [
     },
     {
         category: "   ",
-        items: ["Git", "GitHub Actions", "Postman", "Docker", "Kubernetes", "LINUX", "AWS LINUX"],
+        items: ["Git", "GitHub Actions", "Bitbucket", "Jenkins", "Postman", "Docker", "Kubernetes", "LINUX", "AWS LINUX"],
     },
 ];
 
