@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Trophy, ExternalLink, Chrome, Zap } from "lucide-react";
 
 export default function Achievements() {
@@ -7,18 +8,30 @@ export default function Achievements() {
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-ferrari-red/5 to-transparent pointer-events-none" />
 
             <div className="container px-6 mx-auto max-w-6xl relative z-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-20">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col md:flex-row md:items-end justify-between mb-20"
+                >
                     <div>
                         <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">DISTINCTIONS</span>
                         <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">
                             Achievements <span className="text-gray-600"></span>
                         </h2>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Primary Featured Achievement */}
-                    <div className="lg:col-span-2">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="lg:col-span-2"
+                    >
                         <a
                             href="https://github.com/BadakalaYashwanth/AdEclipse-chrome-extensions"
                             target="_blank"
@@ -54,11 +67,17 @@ export default function Achievements() {
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </motion.div>
 
                     {/* Secondary Achievements List */}
                     <div className="lg:col-span-1 flex flex-col justify-between gap-6">
-                        <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group"
+                        >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0">
                                     <img
@@ -80,9 +99,15 @@ export default function Achievements() {
                                 Contributor to algorithm improvements, enhancing detection accuracy and dataset processing efficiency.
                             </p>
                             <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Open Source Contribution</span>
-                        </div>
+                        </motion.div>
 
-                        <div className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="p-8 bg-white/5 border border-white/5 rounded-sm h-full flex flex-col justify-center hover:bg-white/[0.07] transition-colors group"
+                        >
                             <div className="relative w-10 h-10 md:w-11 md:h-11 lg:w-14 lg:h-14 flex-shrink-0 mb-6">
                                 <img
                                     src="/achievements/cloud-arcade.png"
@@ -95,7 +120,7 @@ export default function Achievements() {
                                 Winner of the cloud architecture and deployment challenge, demonstrating mastery in GCP services.
                             </p>
                             <span className="text-xs font-mono text-gray-500 uppercase tracking-wider">Competition Winner</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
