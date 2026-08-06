@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 
 const projects = [
@@ -61,12 +60,8 @@ export default function Projects() {
 
                 <div className="space-y-32">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <div
                             key={project.id}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.8 }}
                             className="group grid grid-cols-1 md:grid-cols-12 gap-12 items-center"
                         >
                             {/* Project Visual */}
@@ -151,7 +146,7 @@ export default function Projects() {
                                     )}
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

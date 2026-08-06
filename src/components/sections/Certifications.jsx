@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { BadgeCheck } from "lucide-react";
 
 const certifications = [
@@ -47,12 +46,8 @@ export default function Certifications() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {certifications.map((cert, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
                             className="group p-6 bg-ferrari-black border border-white/5 hover:border-ferrari-red/40 transition-all duration-300 rounded-sm flex items-center gap-5"
                         >
                             {/* Logo Container */}
@@ -76,7 +71,7 @@ export default function Certifications() {
                                     </span>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
