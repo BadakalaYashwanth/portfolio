@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { BadgeCheck } from "lucide-react";
+import { fadeInUp, iconHover, scaleUp, staggerContainer } from "../../utils/animationVariants";
 
 const certifications = [
     {
@@ -35,22 +37,31 @@ const certifications = [
 
 export default function Certifications() {
     return (
-        <section id="certifications" className="py-32 bg-zinc-950 border-t border-white/5">
+        <motion.section
+            id="certifications"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={staggerContainer}
+            className="py-32 bg-zinc-950 border-t border-white/5"
+        >
             <div className="container px-6 mx-auto max-w-6xl">
-                <div className="mb-20 text-center md:text-left">
+                <motion.div variants={fadeInUp} className="mb-20 text-center md:text-left">
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">CREDENTIALS</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">
                         Professional <span className="text-gray-600">Certifications</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {certifications.map((cert, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="group p-6 bg-ferrari-black border border-white/5 hover:border-ferrari-red/40 transition-all duration-300 rounded-sm flex items-center gap-5"
+                            variants={scaleUp}
+                            whileHover="hover"
+                            whileTap="tap"
+                            className="group p-6 bg-ferrari-black border border-white/5 hover:border-ferrari-red/40 transition-all duration-300 rounded-sm flex items-center gap-5 cursor-pointer"
                         >
-                            {/* Logo Container */}
                             <div className="relative w-16 h-16 flex-shrink-0 bg-white p-2 rounded-lg overflow-hidden flex items-center justify-center group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-shadow duration-300">
                                 <img
                                     src={cert.logo}
@@ -59,22 +70,23 @@ export default function Certifications() {
                                 />
                             </div>
 
-                            {/* Text Content */}
                             <div>
                                 <h3 className="text-lg font-bold text-white group-hover:text-ferrari-red transition-colors mb-1 leading-tight">
                                     {cert.title}
                                 </h3>
                                 <div className="flex items-center gap-2">
-                                    <BadgeCheck className="w-3 h-3 text-ferrari-red" />
+                                    <motion.span variants={iconHover} whileHover="hover" whileTap="tap">
+                                        <BadgeCheck className="w-3 h-3 text-ferrari-red" />
+                                    </motion.span>
                                     <span className="text-sm text-gray-500 font-mono uppercase tracking-wide">
                                         {cert.issuer}
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

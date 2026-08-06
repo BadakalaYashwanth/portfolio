@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { fadeInUp, hoverScale, iconHover, staggerContainer } from "../../utils/animationVariants";
 
 export default function Hero() {
     return (
@@ -9,52 +11,74 @@ export default function Hero() {
             {/* Grid Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-0 pointer-events-none" />
 
-            <div className="container relative z-10 px-6 mx-auto text-center">
-                <div>
+            <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="container relative z-10 px-6 mx-auto text-center"
+            >
+                <motion.div variants={fadeInUp}>
                     <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-ferrari-red text-xs font-mono tracking-wider mb-6">
                         ENGINEERED FOR PERFORMANCE
                     </span>
-                </div>
+                </motion.div>
 
-                <h1
+                <motion.h1
+                    variants={fadeInUp}
                     className="font-heading text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter text-white mb-6 uppercase leading-tight"
                 >
                     Digital <br className="md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">
                         Perfection
                     </span>
-                </h1>
+                </motion.h1>
 
-                <p
+                <motion.p
+                    variants={fadeInUp}
                     className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light"
                 >
                     AI-Powered Full Stack Developer crafting intelligent, high-performance
                     web experiences where machine learning meets modern engineering.
-                </p>
+                </motion.p>
 
-                <div
+                <motion.div
+                    variants={fadeInUp}
                     className="flex flex-col md:flex-row items-center justify-center gap-4"
                 >
-                    <a
+                    <motion.a
                         href="#projects"
+                        variants={hoverScale}
+                        whileHover="hover"
+                        whileTap="tap"
                         className="group px-8 py-4 bg-ferrari-red text-white font-bold tracking-wide rounded-sm hover:bg-red-600 transition-all flex items-center gap-2"
                     >
                         VIEW PROJECTS
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
+                        <motion.span variants={iconHover} whileHover="hover" whileTap="tap">
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </motion.span>
+                    </motion.a>
+                    <motion.a
                         href="#contact"
+                        variants={hoverScale}
+                        whileHover="hover"
+                        whileTap="tap"
                         className="px-8 py-4 bg-transparent border border-white/20 text-white font-bold tracking-wide rounded-sm hover:bg-white/5 hover:border-white transition-all"
                     >
                         HIRE ME
-                    </a>
-                </div>
-            </div>
+                    </motion.a>
+                </motion.div>
+            </motion.div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+            <motion.div
+                variants={fadeInUp}
+                initial="hidden"
+                animate="visible"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+            >
                 <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent mx-auto" />
-            </div>
+            </motion.div>
         </section>
     );
 }

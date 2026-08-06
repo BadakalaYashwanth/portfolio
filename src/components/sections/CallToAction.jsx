@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Github, Linkedin, Instagram, Check } from "lucide-react";
 import clsx from "clsx";
+import { fadeInUp, hoverScale, iconHover, scaleUp, staggerContainer } from "../../utils/animationVariants";
 
 const socialLinks = [
     {
@@ -52,20 +53,21 @@ export default function CallToAction() {
     };
 
     return (
-        <section id="contact" className="py-32 bg-ferrari-black flex items-center justify-center relative overflow-hidden">
-            {/* Background Accent */}
+        <motion.section
+            id="contact"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={staggerContainer}
+            className="py-32 bg-ferrari-black flex items-center justify-center relative overflow-hidden"
+        >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-ferrari-red/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="container px-6 mx-auto relative z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2 className="font-heading text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter">
+                <motion.div variants={scaleUp}>
+                    <motion.h2 variants={fadeInUp} className="font-heading text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter">
                         Let&apos;s <span className="text-ferrari-red">Connect</span>
-                    </h2>
+                    </motion.h2>
 
                     <div className="flex items-center justify-center gap-12">
                         {socialLinks.map((link) => {
@@ -73,9 +75,12 @@ export default function CallToAction() {
 
                             if (link.action === "copy") {
                                 return (
-                                    <button
+                                    <motion.button
                                         key={link.id}
                                         onClick={() => handleCopy(link.value)}
+                                        variants={hoverScale}
+                                        whileHover="hover"
+                                        whileTap="tap"
                                         className="group relative focus:outline-none"
                                         aria-label={link.label}
                                     >
@@ -86,15 +91,15 @@ export default function CallToAction() {
                                                 copied && link.id === "email" ? "text-green-500 border-green-500/50" : "text-gray-400"
                                             )}
                                         >
-                                            <Icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                                            <motion.div variants={iconHover} whileHover="hover" whileTap="tap">
+                                                <Icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                                            </motion.div>
                                         </div>
 
-                                        {/* Tooltip Label */}
                                         <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-sm text-gray-500 whitespace-nowrap font-mono pointer-events-none">
                                             {copied && link.id === "email" ? "Copied!" : link.label}
                                         </span>
 
-                                        {/* Floating Success Message specifically for copy action */}
                                         <AnimatePresence>
                                             {copied && link.id === "email" && (
                                                 <motion.div
@@ -107,16 +112,19 @@ export default function CallToAction() {
                                                 </motion.div>
                                             )}
                                         </AnimatePresence>
-                                    </button>
+                                    </motion.button>
                                 );
                             }
 
                             return (
-                                <a
+                                <motion.a
                                     key={link.id}
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    variants={hoverScale}
+                                    whileHover="hover"
+                                    whileTap="tap"
                                     className="group relative focus:outline-none"
                                     aria-label={link.label}
                                 >
@@ -126,18 +134,19 @@ export default function CallToAction() {
                                             link.color
                                         )}
                                     >
-                                        <Icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                                        <motion.div variants={iconHover} whileHover="hover" whileTap="tap">
+                                            <Icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" />
+                                        </motion.div>
                                     </div>
-                                    {/* Tooltip Label */}
                                     <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-sm text-gray-500 whitespace-nowrap font-mono pointer-events-none">
                                         {link.label}
                                     </span>
-                                </a>
+                                </motion.a>
                             );
                         })}
                     </div>
                 </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

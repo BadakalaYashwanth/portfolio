@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { fadeInUp, scaleUp, staggerContainer } from "../../utils/animationVariants";
+
 const steps = [
     {
         num: "01",
@@ -23,19 +26,29 @@ const steps = [
 
 export default function Process() {
     return (
-        <section id="process" className="py-24 bg-ferrari-dark border-t border-white/5">
+        <motion.section
+            id="process"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={staggerContainer}
+            className="py-24 bg-ferrari-dark border-t border-white/5"
+        >
             <div className="container px-6 mx-auto">
-                <div className="text-center mb-16">
+                <motion.div variants={fadeInUp} className="text-center mb-16">
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">PRODUCTION LINE</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
                         How I <span className="text-gray-600">Build</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {steps.map((step) => (
-                        <div
+                        <motion.div
                             key={step.num}
+                            variants={scaleUp}
+                            whileHover="hover"
+                            whileTap="tap"
                             className="relative group bg-ferrari-black p-6 border border-white/5 rounded-sm hover:border-ferrari-red/30 transition-colors"
                         >
                             <span className="absolute -top-4 -left-2 text-6xl font-heading font-bold text-white/5 z-0 group-hover:text-ferrari-red/10 transition-colors">
@@ -47,10 +60,10 @@ export default function Process() {
                                     {step.desc}
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

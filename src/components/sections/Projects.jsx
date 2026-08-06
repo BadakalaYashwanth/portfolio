@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import { fadeInUp, hoverScale, staggerContainer } from "../../utils/animationVariants";
 
 const projects = [
     {
@@ -44,9 +46,16 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-32 bg-ferrari-black relative">
+        <motion.section
+            id="projects"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={staggerContainer}
+            className="py-32 bg-ferrari-black relative"
+        >
             <div className="container px-6 mx-auto">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-24">
+                <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between mb-24">
                     <div>
                         <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">Each project is a</span>
                         <h2 className="font-heading text-4xl md:text-6xl font-bold text-white uppercase">
@@ -56,12 +65,13 @@ export default function Projects() {
                     <p className="text-gray-400 max-w-sm mt-6 md:mt-0 font-light">
                         Each project is approached with a full-stack engineering mindset, where performance, scalability, modern UI, machine learning integration, and real-world usability are treated as non-negotiable.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="space-y-32">
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={project.id}
+                            variants={fadeInUp}
                             className="group grid grid-cols-1 md:grid-cols-12 gap-12 items-center"
                         >
                             {/* Project Visual */}
@@ -121,22 +131,28 @@ export default function Projects() {
                                 <div className="flex gap-4 mt-8">
                                     {project.links ? (
                                         <>
-                                            <a
+                                            <motion.a
                                                 href={project.links.demo}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                variants={hoverScale}
+                                                whileHover="hover"
+                                                whileTap="tap"
                                                 className="px-6 py-2.5 text-sm font-bold bg-ferrari-red text-white rounded-sm hover:bg-red-600 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,40,0,0.2)] hover:shadow-[0_0_30px_rgba(255,40,0,0.4)]"
                                             >
                                                 View Project <ExternalLink className="w-4 h-4" />
-                                            </a>
-                                            <a
+                                            </motion.a>
+                                            <motion.a
                                                 href={project.links.repo}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                variants={hoverScale}
+                                                whileHover="hover"
+                                                whileTap="tap"
                                                 className="px-6 py-2.5 text-sm font-bold border border-white/20 text-white rounded-sm hover:border-white hover:bg-white/10 transition-all flex items-center gap-2"
                                             >
                                                 View Code <Github className="w-4 h-4" />
-                                            </a>
+                                            </motion.a>
                                         </>
                                     ) : (
                                         <a href="#" className="flex items-center gap-2 text-white font-bold group/link w-max">
@@ -146,10 +162,10 @@ export default function Projects() {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
