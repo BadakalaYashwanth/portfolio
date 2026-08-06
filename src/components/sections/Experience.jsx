@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 
 export default function Experience() {
@@ -6,28 +5,16 @@ export default function Experience() {
         <section id="experience" className="py-32 bg-ferrari-black border-t border-white/5">
             <div className="container px-6 mx-auto max-w-5xl">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-20"
-                >
+                <div className="mb-20">
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">THE JOURNEY</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">
                         Internship <span className="text-gray-600">Experience</span>
                     </h2>
-                </motion.div>
+                </div>
 
                 <div className="space-y-20">
                     {/* Entry 1: UVNetware */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative border-l border-white/10 pl-8 md:pl-12 py-2"
-                    >
+                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-ferrari-red shadow-[0_0_10px_rgba(255,40,0,0.5)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -64,16 +51,10 @@ export default function Experience() {
                                 </ul>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Entry 2: Feynn Labs */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="relative border-l border-white/10 pl-8 md:pl-12 py-2"
-                    >
+                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-gray-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -163,16 +144,10 @@ export default function Experience() {
                                 </a>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Entry 3: Open Source */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                        className="relative border-l border-white/10 pl-8 md:pl-12 py-2"
-                    >
+                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-gray-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -207,7 +182,7 @@ export default function Experience() {
                                 </ul>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

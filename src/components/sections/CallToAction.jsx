@@ -64,7 +64,7 @@ export default function CallToAction() {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="font-heading text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter">
-                        Let's <span className="text-ferrari-red">Connect</span>
+                        Let&apos;s <span className="text-ferrari-red">Connect</span>
                     </h2>
 
                     <div className="flex items-center justify-center gap-12">

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const steps = [
     {
         num: "01",
@@ -35,13 +33,9 @@ export default function Process() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {steps.map((step, index) => (
-                        <motion.div
+                    {steps.map((step) => (
+                        <div
                             key={step.num}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="relative group bg-ferrari-black p-6 border border-white/5 rounded-sm hover:border-ferrari-red/30 transition-colors"
                         >
                             <span className="absolute -top-4 -left-2 text-6xl font-heading font-bold text-white/5 z-0 group-hover:text-ferrari-red/10 transition-colors">
@@ -53,7 +47,7 @@ export default function Process() {
                                     {step.desc}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
