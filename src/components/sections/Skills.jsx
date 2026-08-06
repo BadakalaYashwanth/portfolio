@@ -13,6 +13,27 @@ const skills = [
         category: "   ",
         items: ["Git", "GitHub Actions", "Bitbucket", "Jenkins", "Postman", "Docker", "Kubernetes", "LINUX", "AWS LINUX"],
     },
+    {
+        category: "    ",
+        items: [
+            "AI/ML",
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "Semi-Supervised Learning",
+            "Reinforcement Learning",
+            "Classification",
+            "Regression",
+            "Clustering",
+            "Neural Networks",
+            "Deep Learning",
+            "LSTM",
+            "Facebook Prophet",
+            "LangChain",
+            "Vector Database",
+            "RAG",
+            "AI Agents",
+        ],
+    },
 ];
 
 export default function Skills() {
