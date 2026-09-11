@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { fadeInLeft, hoverScale, staggerContainer } from "../../utils/animationVariants";
 
 const skills = [
     {
@@ -53,7 +54,14 @@ export default function Skills() {
     };
 
     return (
-        <section id="skills" className="py-24 bg-ferrari-black">
+        <motion.section
+            id="skills"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={staggerContainer}
+            className="py-24 bg-ferrari-black"
+        >
             <div className="container px-6 mx-auto">
                 <div className="mb-16">
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">SPECIFICATIONS</span>
@@ -69,10 +77,7 @@ export default function Skills() {
                         return (
                             <motion.div
                                 key={skillGroup.category}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                variants={fadeInLeft}
                                 className="overflow-hidden"
                             >
                                 {/* Accordion Header */}
@@ -118,14 +123,12 @@ export default function Skills() {
                                             className="overflow-hidden"
                                         >
                                             <div className="px-6 py-6 flex flex-wrap gap-3">
-                                                {skillGroup.items.map((item, i) => (
+                                                {skillGroup.items.map((item) => (
                                                     <motion.span
                                                         key={item}
-                                                        initial={{ opacity: 0, y: 10 }}
-                                                        animate={{ opacity: 1, y: 0 }}
-                                                        whileHover={{ scale: 1.1, y: -3 }}
-                                                        whileTap={{ scale: 0.95 }}
-                                                        transition={{ duration: 0.3, delay: i * 0.04 }}
+                                                        variants={hoverScale}
+                                                        whileHover="hover"
+                                                        whileTap="tap"
                                                         className={`
                                                             px-4 py-2 rounded-full font-mono text-xs
                                                             bg-white/[0.03] border text-gray-400
@@ -145,7 +148,6 @@ export default function Skills() {
                     })}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
-

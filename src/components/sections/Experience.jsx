@@ -1,20 +1,29 @@
+import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { fadeInLeft, fadeInUp, hoverScale, staggerContainer } from "../../utils/animationVariants";
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-32 bg-ferrari-black border-t border-white/5">
+        <motion.section
+            id="experience"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={staggerContainer}
+            className="py-32 bg-ferrari-black border-t border-white/5"
+        >
             <div className="container px-6 mx-auto max-w-5xl">
                 {/* Section Header */}
-                <div className="mb-20">
+                <motion.div variants={fadeInUp} className="mb-20">
                     <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">THE JOURNEY</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white uppercase">
                         Internship <span className="text-gray-600">Experience</span>
                     </h2>
-                </div>
+                </motion.div>
 
                 <div className="space-y-20">
                     {/* Entry 1: UVNetware */}
-                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
+                    <motion.div variants={fadeInLeft} className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-ferrari-red shadow-[0_0_10px_rgba(255,40,0,0.5)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -51,10 +60,10 @@ export default function Experience() {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Entry 2: Feynn Labs */}
-                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
+                    <motion.div variants={fadeInLeft} className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-gray-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -97,10 +106,13 @@ export default function Experience() {
 
                             {/* Featured Projects within Experience */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                                <a
+                                <motion.a
                                     href="https://startling-piroshki-342345.netlify.app/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    variants={hoverScale}
+                                    whileHover="hover"
+                                    whileTap="tap"
                                     className="group relative block aspect-video overflow-hidden border border-white/10 rounded-xl bg-neutral-900 transition-all duration-300 hover:border-ferrari-red/50 hover:brightness-110"
                                 >
                                     <img
@@ -118,12 +130,15 @@ export default function Experience() {
                                     <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent group-hover:opacity-0 transition-opacity">
                                         <h5 className="text-sm font-bold text-white">StockSage</h5>
                                     </div>
-                                </a>
+                                </motion.a>
 
-                                <a
+                                <motion.a
                                     href="https://github.com/BadakalaYashwanth/DataSphere-"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    variants={hoverScale}
+                                    whileHover="hover"
+                                    whileTap="tap"
                                     className="group relative block aspect-video overflow-hidden border border-white/10 rounded-xl bg-neutral-900 transition-all duration-300 hover:border-ferrari-red/50 hover:brightness-110"
                                 >
                                     <img
@@ -141,13 +156,13 @@ export default function Experience() {
                                     <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent group-hover:opacity-0 transition-opacity">
                                         <h5 className="text-sm font-bold text-white">DataSphere</h5>
                                     </div>
-                                </a>
+                                </motion.a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Entry 3: Open Source */}
-                    <div className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
+                    <motion.div variants={fadeInLeft} className="relative border-l border-white/10 pl-8 md:pl-12 py-2">
                         <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-gray-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]" />
 
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-6">
@@ -182,9 +197,9 @@ export default function Experience() {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

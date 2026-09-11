@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
@@ -13,17 +14,18 @@ import CallToAction from "./components/sections/CallToAction";
 function App() {
   return (
     <main className="min-h-screen bg-ferrari-black text-white selection:bg-ferrari-red selection:text-white">
-      {/* Main Navigation */}
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Skills />
-      <Process />
-      <Achievements />
-      <Certifications />
-      <CallToAction />
+      <AnimatePresence mode="wait">
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Process />
+        <Achievements />
+        <Certifications />
+        <CallToAction />
+      </AnimatePresence>
       <Footer />
     </main>
   );

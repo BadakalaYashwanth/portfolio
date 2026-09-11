@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
+import { hoverScale } from "../../utils/animationVariants";
 
 const navItems = [
     "About",
@@ -25,12 +26,22 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleNavClick = (e, item) => {
+        e.preventDefault();
+        const targetId = item.toLowerCase();
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <>
             <motion.nav
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className={clsx(
                     "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12 py-4",
                     isScrolled
@@ -52,6 +63,7 @@ export default function Navbar() {
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
+                                onClick={(e) => handleNavClick(e, item)}
                                 className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
                             >
                                 {item}
@@ -62,21 +74,28 @@ export default function Navbar() {
 
                     {/* CTA Button */}
                     <div className="hidden md:block">
-                        <a
+                        <motion.a
                             href="#contact"
-                            className="px-5 py-2 text-sm font-bold border border-white/20 hover:border-ferrari-red hover:bg-ferrari-red hover:text-white transition-all duration-300 rounded-sm"
+                            onClick={(e) => handleNavClick(e, "contact")}
+                            variants={hoverScale}
+                            whileHover="hover"
+                            whileTap="tap"
+                            className="inline-block px-5 py-2 text-sm font-bold border border-white/20 hover:border-ferrari-red hover:bg-ferrari-red hover:text-white transition-all duration-300 rounded-sm"
                         >
                             HIRE ME
-                        </a>
+                        </motion.a>
                     </div>
 
                     {/* Mobile Toggle */}
-                    <button
+                    <motion.button
+                        variants={hoverScale}
+                        whileHover="hover"
+                        whileTap="tap"
                         className="md:hidden text-white"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X /> : <Menu />}
-                    </button>
+                    </motion.button>
                 </div>
             </motion.nav>
 
@@ -87,26 +106,29 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: "-100%" }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: "-100%" }}
-                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                         className="fixed inset-0 z-40 bg-ferrari-black flex flex-col items-center justify-center space-y-8 md:hidden"
                     >
                         {navItems.map((item) => (
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={(e) => handleNavClick(e, item)}
                                 className="text-3xl font-heading font-bold text-white hover:text-ferrari-red transition-colors"
                             >
                                 {item}
                             </a>
                         ))}
-                        <a
+                        <motion.a
                             href="#contact"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            variants={hoverScale}
+                            whileHover="hover"
+                            whileTap="tap"
+                            onClick={(e) => handleNavClick(e, "contact")}
                             className="px-8 py-3 text-lg font-bold bg-ferrari-red text-white rounded-sm"
                         >
                             HIRE ME
-                        </a>
+                        </motion.a>
                     </motion.div>
                 )}
             </AnimatePresence>
