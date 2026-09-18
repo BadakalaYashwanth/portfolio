@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import { fadeInLeft, fadeInRight, scaleUp, staggerContainer } from "../../utils/animationVariants";
 
 const projectImages = [
-    { src: "/projects/datasphere.png",      name: "DataSphere" },
-    { src: "/projects/drivefusion.png",     name: "DriveFusion" },
+    { src: "/projects/datasphere.png", name: "DataSphere" },
+    { src: "/projects/drivefusion.png", name: "DriveFusion" },
     { src: "/projects/meta-extensions.png", name: "Meta Extensions" },
-    { src: "/projects/neowallet.png",       name: "NeoWallet" },
-    { src: "/projects/stocksage.png",       name: "StockSage" },
+    { src: "/projects/neowallet.png", name: "NeoWallet" },
+    { src: "/projects/stocksage.png", name: "StockSage" },
 ];
 
 const slideVariants = {
@@ -27,63 +27,7 @@ const slideVariants = {
     }),
 };
 
-function ProjectSlider({ index, direction, onGoTo }) {
-    const current = projectImages[index];
-
-    return (
-        <div className="absolute inset-0 overflow-hidden rounded-sm">
-            <AnimatePresence custom={direction} mode="popLayout">
-                <motion.img
-                    key={current.src}
-                    src={current.src}
-                    alt={current.name}
-                    custom={direction}
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-            </AnimatePresence>
-
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-            {/* Project name bottom-left */}
-            <div className="absolute bottom-4 left-4 right-4">
-                <AnimatePresence mode="wait">
-                    <motion.span
-                        key={current.name}
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.3 }}
-                        className="text-white font-heading font-bold text-sm tracking-wider uppercase"
-                    >
-                        {current.name}
-                    </motion.span>
-                </AnimatePresence>
-            </div>
-
-            {/* Dot indicators bottom-right */}
-            <div className="absolute bottom-4 right-4 flex gap-2">
-                {projectImages.map((_, i) => (
-                    <button
-                        key={i}
-                        onClick={() => onGoTo(i)}
-                        className={`transition-all duration-300 rounded-full ${
-                            i === index
-                                ? "w-6 h-2 bg-ferrari-red"
-                                : "w-2 h-2 bg-white/30 hover:bg-white/60"
-                        }`}
-                    />
-                ))}
-            </div>
-        </div>
-    );
-}
-
-export default function About() {
+function ProjectSlider() {
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(1);
 
@@ -100,16 +44,69 @@ export default function About() {
         setIndex(i);
     };
 
-    // Dots: only show 3, cycling through active states
-    const dotColors = [0, 1, 2].map((offset) => {
-        const dotIndex = (index + offset) % projectImages.length;
-        return dotIndex === index % projectImages.length && offset === 0
-            ? "bg-ferrari-red animate-pulse"
-            : offset === 1
-            ? "bg-gray-500"
-            : "bg-gray-700";
-    });
+    const current = projectImages[index];
 
+    return (
+        // Fill the entire parent card — no scroll, no extra height
+        <div className="absolute inset-0 overflow-hidden rounded-sm">
+
+            {/* Sliding images — each fills 100% of the card */}
+            <AnimatePresence custom={direction} mode="popLayout">
+                <motion.img
+                    key={current.src}
+                    src={current.src}
+                    alt={current.name}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    className="absolute inset-0 w-full h-full object-cover"
+                />
+            </AnimatePresence>
+
+            {/* Top gradient so number is readable */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70 pointer-events-none" />
+
+            {/* TOP-LEFT: animated slide number */}
+            <div className="absolute top-5 left-5">
+                <AnimatePresence mode="wait">
+                    <motion.span
+                        key={index}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-7xl font-heading font-bold text-white/20 leading-none select-none"
+                    >
+                        {String(index + 1).padStart(2, "0")}
+                    </motion.span>
+                </AnimatePresence>
+            </div>
+
+
+
+
+            {/* BOTTOM: project name */}
+            <div className="absolute bottom-5 left-5">
+                <AnimatePresence mode="wait">
+                    <motion.span
+                        key={current.name}
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-white font-heading font-bold text-sm tracking-widest uppercase"
+                    >
+                        {current.name}
+                    </motion.span>
+                </AnimatePresence>
+            </div>
+        </div>
+    );
+}
+
+export default function About() {
     return (
         <motion.section
             id="about"
@@ -147,39 +144,9 @@ export default function About() {
                     <motion.div variants={fadeInRight} className="relative">
                         <motion.div
                             variants={scaleUp}
-                            className="aspect-square bg-gradient-to-tr from-ferrari-black to-zinc-900 rounded-sm border border-white/5 relative overflow-hidden"
+                            className="aspect-square rounded-sm border border-white/5 relative overflow-hidden"
                         >
-                            {/* Header overlay — number + dots, always on top */}
-                            <div className="absolute top-0 left-0 right-0 z-20 flex justify-between items-start p-6 bg-gradient-to-b from-black/60 to-transparent pointer-events-none">
-                                <AnimatePresence mode="wait">
-                                    <motion.span
-                                        key={index}
-                                        initial={{ opacity: 0, y: -8 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 8 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="text-6xl font-heading font-bold text-white/20 leading-none"
-                                    >
-                                        {String(index + 1).padStart(2, "0")}
-                                    </motion.span>
-                                </AnimatePresence>
-                                <div className="flex gap-2 pointer-events-auto">
-                                    {projectImages.map((_, i) => (
-                                        <button
-                                            key={i}
-                                            onClick={() => goTo(i)}
-                                            className={`transition-all duration-300 rounded-full ${
-                                                i === index
-                                                    ? "w-6 h-2 bg-ferrari-red"
-                                                    : "w-2 h-2 bg-white/30 hover:bg-white/60"
-                                            }`}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Full-bleed image slider */}
-                            <ProjectSlider index={index} direction={direction} onGoTo={goTo} />
+                            <ProjectSlider />
                         </motion.div>
                     </motion.div>
                 </div>
@@ -187,4 +154,3 @@ export default function About() {
         </motion.section>
     );
 }
-
