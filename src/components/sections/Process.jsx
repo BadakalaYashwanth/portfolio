@@ -4,23 +4,33 @@ import { fadeInUp, scaleUp, staggerContainer } from "../../utils/animationVarian
 const steps = [
     {
         num: "01",
-        title: "Discovery",
-        desc: "Understanding the core problem and defining success metrics.",
+        title: "Planning",
+        desc: "Gathering requirements, defining project scope, feasibility analysis, and setting timelines and success criteria.",
     },
     {
         num: "02",
-        title: "Architecture",
-        desc: "Designing scalable systems and intuitive interfaces.",
+        title: "Design",
+        desc: "Creating system architecture, UI/UX wireframes, database schemas, and technical specifications.",
     },
     {
         num: "03",
-        title: "Development",
-        desc: "Writing clean, efficient, and well-documented code.",
+        title: "Implementation",
+        desc: "Writing clean, modular, and well-documented code following industry best practices and standards.",
     },
     {
         num: "04",
-        title: "Optimization",
-        desc: "Refining performance, SEO, and user experience.",
+        title: "Testing",
+        desc: "Executing unit, integration, and UAT to ensure quality, performance, and bug-free delivery.",
+    },
+    {
+        num: "05",
+        title: "Deployment",
+        desc: "Releasing the product to production with CI/CD pipelines, environment configuration, and rollout strategies.",
+    },
+    {
+        num: "06",
+        title: "Maintenance",
+        desc: "Monitoring performance, patching vulnerabilities, and iterating based on user feedback and analytics.",
     },
 ];
 
@@ -36,13 +46,13 @@ export default function Process() {
         >
             <div className="container px-6 mx-auto">
                 <motion.div variants={fadeInUp} className="text-center mb-16">
-                    <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">PRODUCTION LINE</span>
+                    <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">SOFTWARE DEVELOPMENT LIFECYCLE</span>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
-                        How I <span className="text-gray-600">Build</span>
+                        My <span className="text-gray-600">SDLC</span> Process
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
                     {steps.map((step) => (
                         <motion.div
                             key={step.num}
