@@ -75,9 +75,10 @@ export default function Hero() {
                 variants={fadeInUp}
                 initial="hidden"
                 animate="visible"
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
             >
-                <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent mx-auto" />
+                <i className="bi bi-mouse text-white/20 text-xl" />
+                <i className="bi bi-chevron-double-down text-white/20 text-xs animate-bounce" />
             </motion.div>
         </section>
     );

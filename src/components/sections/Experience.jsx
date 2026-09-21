@@ -40,19 +40,19 @@ export default function Experience() {
                                 <h4 className="text-sm font-mono text-gray-500 uppercase tracking-widest">Key Contributions</h4>
                                 <ul className="space-y-4 text-gray-300 font-light">
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <i className="bi bi-shield-lock text-ferrari-red mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Built secure JWT-based authentication system with bcrypt password hashing, MongoDB user schema, CORS-protected Express backend, and localStorage token management, delivering zero-vulnerability password storage and seamless login/logout across production deployment.
                                         </span>
                                     </li>
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <i className="bi bi-check2-circle text-ferrari-red mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Implemented multi-layer validation using Joi middleware (backend) and regex patterns (frontend) with real-time error feedback, domain-restricted email whitelist, and password strength requirements, preventing invalid data submission and improving user experience with specific error guidance.
                                         </span>
                                     </li>
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <i className="bi bi-lock-fill text-ferrari-red mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Developed JWT-authenticated product dashboard with PrivateRoute guards, secure API calls using Authorization headers, automatic token refresh on page load, and graceful 401/403 error handling, ensuring only authorized users access protected endpoints with zero security vulnerabilities.
                                         </span>
@@ -84,19 +84,19 @@ export default function Experience() {
                                 <h4 className="text-sm font-mono text-gray-500 uppercase tracking-widest">Key Contributions</h4>
                                 <ul className="space-y-4 text-gray-300 font-light">
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <i className="bi bi-graph-up-arrow text-ferrari-red mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Built and optimized responsive React interfaces consuming Node.js APIs, improving data visualization performance and insight delivery speed by approximately 9 percent.
                                         </span>
                                     </li>
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <i className="bi bi-cpu text-ferrari-red mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Integrated modern React UI with machine learning pipelines to improve investment forecasting accuracy and increase user engagement.
                                         </span>
                                     </li>
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-ferrari-red mt-2.5 shrink-0" />
+                                        <i className="bi bi-database-check text-ferrari-red mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Focused on optimizing data models and query performance for interactive analytics.
                                         </span>
@@ -183,13 +183,13 @@ export default function Experience() {
                                 <h4 className="text-sm font-mono text-gray-500 uppercase tracking-widest">Key Contributions</h4>
                                 <ul className="space-y-4 text-gray-300 font-light">
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2.5 shrink-0" />
+                                        <i className="bi bi-git text-gray-400 mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Resolved TensorFlow runtime failures, improving distributed model stability and reducing execution errors across community projects.
                                         </span>
                                     </li>
                                     <li className="flex gap-3 items-start">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2.5 shrink-0" />
+                                        <i className="bi bi-speedometer2 text-gray-400 mt-1 shrink-0 text-sm" />
                                         <span className="leading-relaxed">
                                             Optimized Pandas and NumPy data workflows, lowering large dataset processing latency and reducing compute resource usage.
                                         </span>

@@ -4,35 +4,42 @@ import { fadeInUp, scaleUp, staggerContainer } from "../../utils/animationVarian
 const steps = [
     {
         num: "01",
+        icon: "bi-clipboard2-check",
         title: "Planning",
         desc: "Gathering requirements, defining project scope, feasibility analysis, and setting timelines and success criteria.",
     },
     {
         num: "02",
+        icon: "bi-pencil-square",
         title: "Design",
         desc: "Creating system architecture, UI/UX wireframes, database schemas, and technical specifications.",
     },
     {
         num: "03",
+        icon: "bi-code-slash",
         title: "Implementation",
         desc: "Writing clean, modular, and well-documented code following industry best practices and standards.",
     },
     {
         num: "04",
+        icon: "bi-bug",
         title: "Testing",
         desc: "Executing unit, integration, and UAT to ensure quality, performance, and bug-free delivery.",
     },
     {
         num: "05",
+        icon: "bi-cloud-upload",
         title: "Deployment",
         desc: "Releasing the product to production with CI/CD pipelines, environment configuration, and rollout strategies.",
     },
     {
         num: "06",
+        icon: "bi-tools",
         title: "Maintenance",
         desc: "Monitoring performance, patching vulnerabilities, and iterating based on user feedback and analytics.",
     },
 ];
+
 
 export default function Process() {
     return (
@@ -65,6 +72,7 @@ export default function Process() {
                                 {step.num}
                             </span>
                             <div className="relative z-10 pt-4">
+                                <i className={`bi ${step.icon} text-2xl text-ferrari-red mb-3 block group-hover:scale-110 transition-transform duration-300`} />
                                 <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
                                     {step.desc}

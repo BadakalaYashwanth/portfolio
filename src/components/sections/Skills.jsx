@@ -6,18 +6,22 @@ import { fadeInLeft, hoverScale, staggerContainer } from "../../utils/animationV
 const skills = [
     {
         category: "Primary Languages",
+        icon: "bi-terminal-fill",
         items: ["Python", "Java", "JavaScript", "TypeScript"],
     },
     {
         category: "Frontend, Backend & Database",
+        icon: "bi-layers-fill",
         items: ["React", "Next.js", "Express.js", "Node.js", "Tailwind CSS", "Bootstrap CSS", "PostgreSQL", "MySQL", "MongoDB", "RDBMS"],
     },
     {
         category: "DevOps & Tools",
+        icon: "bi-gear-wide-connected",
         items: ["Git", "GitHub Actions", "Bitbucket", "Jenkins", "Postman", "Docker", "Kubernetes", "LINUX", "AWS LINUX"],
     },
     {
         category: "AI/ML",
+        icon: "bi-robot",
         items: [
             "Supervised Learning",
             "Unsupervised Learning",
@@ -96,6 +100,7 @@ export default function Skills() {
                                     <div className={`absolute left-0 top-0 bottom-0 w-1 ${color.bar} transition-all duration-300 ${isOpen ? "opacity-100" : "opacity-40 group-hover:opacity-70"}`} />
 
                                     <div className="flex items-center gap-4 pl-4">
+                                        <i className={`bi ${skillGroup.icon} text-lg transition-colors duration-300 ${isOpen ? color.text : "text-gray-500 group-hover:text-white"}`} />
                                         <h3 className={`font-mono text-sm tracking-widest uppercase transition-colors duration-300 ${isOpen ? color.text : "text-gray-400 group-hover:text-white"}`}>
                                             {skillGroup.category}
                                         </h3>
