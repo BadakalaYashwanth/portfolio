@@ -18,8 +18,8 @@ function App() {
       <AnimatePresence mode="wait">
         <Hero />
         <About />
-        <Projects />
         <Experience />
+        <Projects />
         <Skills />
         <Process />
         <Achievements />

@@ -6,8 +6,8 @@ import { hoverScale } from "../../utils/animationVariants";
 
 const navItems = [
     "About",
-    "Projects",
     "Experience",
+    "Projects",
     "Skills",
     "Process",
     "Achievements",
