@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeInUp, hoverScale, iconHover, staggerContainer } from "../../utils/animationVariants";
+import WaveBackground from "../common/WaveBackground";
 
 export default function Hero() {
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden bg-ferrari-black">
-            {/* Background Gradient / Spotlight */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900/50 via-ferrari-black to-ferrari-black z-0 pointer-events-none" />
+            {/* 3D Wave Ribbon Animation - Deepest Background Layer */}
+            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <WaveBackground />
+            </div>
+
+            {/* Background Gradient / Spotlight over wave */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900/40 via-ferrari-black/75 to-ferrari-black z-[1] pointer-events-none" />
 
             {/* Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-0 pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-[2] pointer-events-none" />
 
             <motion.div
                 variants={staggerContainer}
