@@ -8,7 +8,7 @@ export default function Achievements() {
             id="achievements"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={staggerContainer}
             className="py-32 bg-ferrari-black border-t border-white/5 relative overflow-hidden"
         >

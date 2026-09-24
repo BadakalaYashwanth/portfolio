@@ -57,7 +57,7 @@ export default function CallToAction() {
             id="contact"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={staggerContainer}
             className="py-32 bg-ferrari-black flex items-center justify-center relative overflow-hidden"
         >

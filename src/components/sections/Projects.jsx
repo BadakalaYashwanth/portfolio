@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
-import { fadeInUp, hoverScale, staggerContainer } from "../../utils/animationVariants";
+import { fadeInUp, hoverScale } from "../../utils/animationVariants";
 
 const projects = [
     {
@@ -46,16 +46,18 @@ const projects = [
 
 export default function Projects() {
     return (
-        <motion.section
+        <section
             id="projects"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
-            variants={staggerContainer}
             className="py-32 bg-ferrari-black relative"
         >
             <div className="container px-6 mx-auto">
-                <motion.div variants={fadeInUp} className="flex flex-col md:flex-row md:items-end justify-between mb-24">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInUp}
+                    className="flex flex-col md:flex-row md:items-end justify-between mb-24"
+                >
                     <div>
                         <span className="text-ferrari-red font-mono text-sm tracking-widest mb-2 block">Each project is a</span>
                         <h2 className="font-heading text-4xl md:text-6xl font-bold text-white uppercase">
@@ -71,6 +73,9 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.15 }}
                             variants={fadeInUp}
                             className="group grid grid-cols-1 md:grid-cols-12 gap-12 items-center"
                         >
@@ -81,7 +86,9 @@ export default function Projects() {
                                         <img
                                             src={project.image}
                                             alt={`${project.title} Preview`}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            loading="eager"
+                                            fetchPriority={project.id === "03" ? "high" : "auto"}
+                                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         />
 
                                         {/* Hover Overlay */}
@@ -166,6 +173,6 @@ export default function Projects() {
                     ))}
                 </div>
             </div>
-        </motion.section>
+        </section>
     );
 }

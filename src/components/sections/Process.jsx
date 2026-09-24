@@ -47,7 +47,7 @@ export default function Process() {
             id="process"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={staggerContainer}
             className="py-24 bg-ferrari-dark border-t border-white/5"
         >
