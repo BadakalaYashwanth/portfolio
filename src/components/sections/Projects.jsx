@@ -12,7 +12,7 @@ const projects = [
         color: "from-emerald-900 to-black",
         image: "/projects/neowallet.png",
         links: {
-            demo: "https://ephemeral-biscuit-fca23e.netlify.app/",
+            demo: "https://walletpa.netlify.app/",
             repo: "https://github.com/BadakalaYashwanth/NeoWallet"
         }
     },
